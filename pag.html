@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer ficar comigo uma noite princesa?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: red; /* Fundo vermelho */
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            color: white; /* Torna o texto branco para melhor visibilidade */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #fff;
+            display: inline-block;
+            margin-bottom: 30px; /* Adiciona um espaço abaixo do título */
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            width: 150px; /* Definindo uma largura para os botões */
+        }
+
+        #btn-sim {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #btn-nao {
+            background-color: #f44336;
+            color: white;
+        }
+
+        /* Estilo do botão "Não" para impedir cliques */
+        #btn-nao:active {
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quer ficar comigo uma noite princesa?</h1>
+
+    <!-- Botões abaixo do título -->
+    <div>
+        <button id="btn-sim" onclick="irParaMusica()">Sim</button>
+        <button id="btn-nao" onclick="teletransportarBotaoNao()">Não</button>
+    </div>
+
+    <script>
+        // Função para redirecionar para a música do YouTube
+        function irParaMusica() {
+            window.location.href = "https://youtu.be/izGwDsrQ1eQ?si=xcAPJyjENgOzrnjz"; // Link da música no YouTube
+        }
+
+        // Função para teletransportar o botão "Não"
+        function teletransportarBotaoNao() {
+            var btnNao = document.getElementById("btn-nao");
+            var maxX = window.innerWidth - btnNao.offsetWidth;
+            var maxY = window.innerHeight - btnNao.offsetHeight;
+            
+            // Calcular uma nova posição aleatória para o botão "Não"
+            var randomX = Math.floor(Math.random() * maxX);
+            var randomY = Math.floor(Math.random() * maxY);
+
+            // Mover o botão "Não" para a nova posição aleatória
+            btnNao.style.position = "absolute";
+            btnNao.style.left = randomX + "px";
+            btnNao.style.top = randomY + "px";
+        }
+    </script>
+</body>
+</html>
